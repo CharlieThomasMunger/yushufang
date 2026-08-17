@@ -1,0 +1,310 @@
+---
+layout: null
+title: 玉书房 | The Jade Study
+description: A framework for high-stakes family decisions before they become hard to reverse.
+---
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>玉书房 | The Jade Study</title>
+<meta name="description" content="A framework for high-stakes family decisions before they become hard to reverse. 玉书房研究家庭在教育、地域、婚姻、事业、财富与传承上的重大决策。">
+<link rel="canonical" href="https://yushufang.org/">
+<meta property="og:site_name" content="玉书房 | The Jade Study">
+<meta property="og:title" content="玉书房 | The Jade Study">
+<meta property="og:description" content="A framework for high-stakes family decisions before they become hard to reverse.">
+<meta property="og:url" content="https://yushufang.org/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F4EE;
+    --paper-deep:#EFEBE2;
+    --ink:#191713;
+    --ink-soft:#4A463E;
+    --ink-faint:#8B8579;
+    --cinnabar:#9E2B25;
+    --rule:rgba(25,23,19,.16);
+    --cjk:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC","Noto Serif SC","SimSun",serif;
+    --latin:"Source Serif 4",Georgia,"Times New Roman",serif;
+    --measure:36rem;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--latin),var(--cjk);
+    font-size:17px;
+    line-height:1.9;
+    letter-spacing:.01em;
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+  }
+  .zh{font-family:var(--cjk)}
+  .en{font-family:var(--latin)}
+
+  /* ---- 竖排书脊（signature） ---- */
+  .spine{
+    position:fixed;top:0;left:0;height:100vh;width:5.5rem;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:1.6rem;pointer-events:none;z-index:5;
+  }
+  .spine__name{
+    writing-mode:vertical-rl;font-family:var(--cjk);
+    font-size:1.05rem;letter-spacing:.5em;color:var(--ink-soft);
+  }
+  .seal{
+    width:2rem;height:2rem;border:1.5px solid var(--cinnabar);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--cinnabar);font-family:var(--cjk);
+    font-size:1.05rem;line-height:1;padding-bottom:.05em;
+  }
+
+  /* ---- 版心 ---- */
+  main{max-width:var(--measure);margin:0 auto;padding:0 1.5rem}
+  section{padding:7rem 0}
+  section + section{border-top:1px solid var(--rule)}
+
+  /* ---- 第一屏 ---- */
+  .hero{padding:8.5rem 0 7rem;min-height:78vh;display:flex;flex-direction:column;justify-content:center}
+  .hero h1{
+    font-family:var(--cjk);font-weight:600;
+    font-size:clamp(1.6rem,4.6vw,2.35rem);
+    line-height:1.65;letter-spacing:.02em;margin:0 0 2.4rem;
+  }
+  .hero p{
+    font-family:var(--cjk);margin:0 0 1.1rem;
+    font-size:1.06rem;color:var(--ink-soft);
+  }
+  .hero .define{color:var(--ink)}
+  .hero .en-lockup{margin-top:3.2rem}
+  .hero .en-lockup .mark{
+    font-family:var(--latin);font-size:1.02rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink);margin:0 0 .5rem;
+  }
+  .hero .en-lockup .line{
+    font-family:var(--latin);font-size:.98rem;font-style:italic;
+    color:var(--ink-soft);margin:0;line-height:1.7;
+  }
+
+  /* ---- 标题 ---- */
+  .eyebrow{
+    font-family:var(--cjk);font-size:.8rem;letter-spacing:.42em;
+    color:var(--ink-faint);margin:0 0 2.6rem;
+  }
+  h2{
+    font-family:var(--cjk);font-weight:600;font-size:1.28rem;
+    line-height:1.7;margin:0 0 1.6rem;letter-spacing:.02em;
+  }
+  h2 .num{
+    color:var(--cinnabar);font-size:.95rem;letter-spacing:.2em;
+    margin-right:.85em;font-weight:400;
+  }
+  section > h2:not(:first-of-type){margin-top:4.5rem}
+  p{font-family:var(--cjk);margin:0 0 1.45rem}
+  strong{font-weight:600}
+  .lede{color:var(--ink)}
+
+  /* ---- 三层 ---- */
+  .layers{margin:0 0 2.4rem;padding:0;list-style:none}
+  .layers li{
+    font-family:var(--cjk);padding:1.15rem 0;
+    border-bottom:1px solid var(--rule);color:var(--ink-soft);
+  }
+  .layers li:first-child{border-top:1px solid var(--rule)}
+  .layers b{
+    display:inline-block;min-width:4.2em;font-weight:600;
+    color:var(--ink);letter-spacing:.18em;
+  }
+
+  /* ---- 六领域 ---- */
+  .fields{
+    display:flex;flex-wrap:wrap;gap:.55rem 1.5rem;
+    margin:2.8rem 0 2rem;padding:0;list-style:none;
+  }
+  .fields li{
+    font-family:var(--cjk);font-size:1.16rem;
+    letter-spacing:.16em;font-weight:600;
+  }
+  .fields li span{
+    display:block;font-family:var(--latin);font-size:.72rem;
+    letter-spacing:.13em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:400;margin-top:.15rem;
+  }
+  .closing{
+    font-family:var(--cjk);font-size:1.1rem;color:var(--ink);
+    margin-top:2.6rem;
+  }
+
+  /* ---- 英文块 ---- */
+  .en-block{font-family:var(--latin)}
+  .en-block p{font-family:var(--latin);color:var(--ink-soft);margin-bottom:1.3rem}
+  .en-block .eyebrow{font-family:var(--latin);letter-spacing:.28em;text-transform:uppercase;font-size:.74rem}
+  .en-block h2{font-family:var(--latin);font-weight:400;font-style:italic;font-size:1.22rem;letter-spacing:0}
+  .en-block .fields-en{
+    margin:2.2rem 0 0;padding:0;list-style:none;
+    font-family:var(--latin);color:var(--ink);
+    letter-spacing:.16em;text-transform:uppercase;font-size:.82rem;line-height:2.4;
+  }
+
+  /* ---- 订阅 ---- */
+  footer{
+    border-top:1px solid var(--rule);
+    padding:5rem 0 6rem;max-width:var(--measure);
+    margin:0 auto;padding-left:1.5rem;padding-right:1.5rem;
+  }
+  .sub-note{font-family:var(--cjk);color:var(--ink-faint);font-size:.92rem;margin:0 0 1.4rem}
+  form{display:flex;gap:.75rem;flex-wrap:wrap;align-items:stretch}
+  input[type=email]{
+    flex:1 1 15rem;background:transparent;border:none;
+    border-bottom:1px solid var(--rule);padding:.7rem .1rem;
+    font-family:var(--latin);font-size:1rem;color:var(--ink);
+    border-radius:0;
+  }
+  input[type=email]:focus{outline:none;border-bottom-color:var(--cinnabar)}
+  input[type=email]::placeholder{color:var(--ink-faint)}
+  button{
+    background:transparent;border:1px solid var(--cinnabar);
+    color:var(--cinnabar);font-family:var(--cjk);font-size:.95rem;
+    letter-spacing:.22em;padding:.7rem 1.5rem;cursor:pointer;
+    border-radius:0;transition:background .25s,color .25s;
+  }
+  button:hover{background:var(--cinnabar);color:var(--paper)}
+  :focus-visible{outline:2px solid var(--cinnabar);outline-offset:3px}
+  .colophon{
+    margin-top:4rem;font-family:var(--latin);font-size:.8rem;
+    color:var(--ink-faint);letter-spacing:.06em;
+  }
+
+  /* ---- 入场 ---- */
+  .fade{opacity:0;transform:translateY(10px);animation:rise .9s ease forwards}
+  .fade:nth-child(2){animation-delay:.12s}
+  .fade:nth-child(3){animation-delay:.2s}
+  .fade:nth-child(4){animation-delay:.28s}
+  .fade:nth-child(5){animation-delay:.4s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .fade{animation:none;opacity:1;transform:none}
+    *{transition:none!important}
+  }
+
+  /* ---- 窄屏 ---- */
+  @media (max-width:900px){
+    .spine{
+      position:static;height:auto;width:auto;flex-direction:row;
+      justify-content:flex-start;gap:1rem;padding:2rem 1.5rem 0;
+      max-width:var(--measure);margin:0 auto;
+    }
+    .spine__name{writing-mode:horizontal-tb;letter-spacing:.35em;font-size:1rem}
+    .hero{min-height:auto;padding:4rem 0 5rem}
+    section{padding:5rem 0}
+    body{font-size:16px;line-height:1.85}
+  }
+</style>
+</head>
+<body>
+
+<div class="spine" aria-hidden="true">
+  <div class="spine__name">玉書房</div>
+  <div class="seal">玉</div>
+</div>
+
+<main>
+
+  <!-- ============ 第一屏 ============ -->
+  <section class="hero">
+    <h1 class="fade">只有有东西可失去的人，<br>才真正害怕命。</h1>
+    <p class="fade">改命不是从无到有，是从有到更有、且不失去。</p>
+    <p class="fade define">改命不是改变命运，是改变命运显性化的载体与规则。</p>
+    <div class="en-lockup fade">
+      <p class="mark">The Jade Study</p>
+      <p class="line">A framework for high-stakes family decisions<br>before they become hard to reverse.</p>
+    </div>
+  </section>
+
+  <!-- ============ 第二屏 ============ -->
+  <section>
+    <p class="eyebrow">我们在研究什么</p>
+
+    <h2><span class="num">一</span>国学：它到底强在哪里</h2>
+    <p>命理堪舆之学在中国，从来不是市井之术。历代皆设专司：周有太史寮，隋唐称太史局、司天台，宋称司天监，明清定名钦天监。它管观察天象、推算节气、制定历法、择日堪舆。很长一段时间里，平民不得私自编历授时——这门学问是被国家垄断的。</p>
+    <p>它管的事，今天看来格外眼熟：什么时候动，什么时候不动。登基、出兵、营建、册立，全是重大而不可逆的决定。</p>
+    <p class="lede">但它真正的价值不在规格，在它擅长的那类问题。</p>
+    <p>条件清楚、数据充分、周期短的问题，量化的方法远比它精确。而当变量太多、信息不全、周期长到没有样本可以回测的时候——也就是一个家庭面对的绝大多数重大选择——可量化的方法反而失灵了。量化投资抓得住短周期的趋势，但它的规模天花板一直都在，因为那套方法的适用边界就在那里。</p>
+    <p>国学强的正是另一半：混沌之中的方向判断、周期起落的识别、什么时候该动什么时候该守。它还有一些至今无法被另一套框架解释的东西——解释不了，不等于无效。</p>
+    <p>历代真正把这门学问研究到深处的，不是走投无路的人，是有东西可失去的人。</p>
+    <p>今天没有变，变的只是称谓。过去是门阀，今天是把一家企业交给下一代的创始人；过去是商贾，今天是资产分散在几个法域、孩子在另一个国家读书的家庭；过去是仕宦之家，今天是靠一代人挣到位置、正在盘算这个位置能不能传下去的人。</p>
+    <p>名字换了，问题没换：这份东西能不能守住，能传几代，孩子承不承得住，我这一代的选择会把这个家推向哪里。</p>
+
+    <h2><span class="num">二</span>西学：方向对了，还要有形状</h2>
+    <p>只看清方向是不够的。方向要变成结果，中间隔着两样东西：用什么形式承载——一个人、一家公司、一个跨国架构；借哪套规则放大——法律、税务、教育系统、身份组合。</p>
+    <p>这一套，西方研究了几百年，而且是在真实的跨境实践里研究的：法域怎么选，架构怎么搭，风险怎么隔离，代际怎么交接。</p>
+    <p>它也有它的空缺。它不承认起点的差异，因此永远解释不了，为什么同一套方案在不同的人身上，结果完全不同。</p>
+    <p>所以两边都只有一半。国学止步于“看清”，久了就滑向玄学或哲学；西学止步于“结构”，因此解释不了人。<strong>把两半接上，才是完整的一次决策。</strong></p>
+
+    <h2><span class="num">三</span>合流：四百年前就发生过一次</h2>
+    <p>1645 年，清廷颁行《时宪历》，主持编算的德国耶稣会士汤若望随即出任钦天监监正——中国历史上第一位主管钦天监的洋人。此后南怀仁等人相继主持此监。中间也有过反复：1668 年底，康熙命南怀仁与杨光先当廷比试推算日影，南怀仁胜出，西法复用。</p>
+    <p>理由很简单：西法算得更准。</p>
+    <p>要解决的问题仍然是中国的，用来解决它的方法却来自西方。</p>
+    <p class="lede"><strong>西学为用，国学为魂</strong>——这不是玉书房的发明，这是四百年前就已经做过的选择。</p>
+  </section>
+
+  <!-- ============ 第三屏 ============ -->
+  <section>
+    <p class="eyebrow">我们怎么想这件事</p>
+    <p>任何一个重大结果，都要经过三层：</p>
+    <ul class="layers">
+      <li><b>能量</b>你的起点：天性、才能、周期、时机</li>
+      <li><b>载体</b>你用什么形式承载它</li>
+      <li><b>规则</b>你借哪套规则放大它</li>
+    </ul>
+    <p>三者是乘数关系，不是加法。同样的起点，装进不同的载体、接上不同的规则，结果可以差几十倍到上百倍。</p>
+    <p class="lede">第一层改不了。<strong>战场在中间两层。</strong></p>
+    <p>条件不是天生的禀赋，是上一轮布局显性出来的结果。做对一次布局，产生的不只是钱——还有信心、资源和关系，而这些正是下一轮可用的条件。所以改命不是一跃，是循环：每一轮的结果，都是下一轮的起点。</p>
+    <p>我们研究这个循环如何跑得更快、更省力——看清底层规则和运行原理，借东风，草船借箭。而不是关起门来自己造箭，最后要么怪自己能力不够，要么怪外部环境不公。</p>
+    <ul class="fields">
+      <li>教育<span>Education</span></li>
+      <li>地域<span>Geography</span></li>
+      <li>婚姻<span>Marriage</span></li>
+      <li>事业<span>Career</span></li>
+      <li>财富<span>Wealth</span></li>
+      <li>传承<span>Succession</span></li>
+    </ul>
+    <p class="closing">共同点只有一个——做错了，回不去。</p>
+  </section>
+
+  <!-- ============ 英文块（面向顾问与机构读者） ============ -->
+  <section class="en-block" lang="en">
+    <p class="eyebrow">In English</p>
+    <h2>A framework for high-stakes family decisions before they become hard to reverse.</h2>
+    <p>Most consequential family choices — where the children are educated, where the family lives, whom they marry, how a business is handed on — are made once, under incomplete information, on timescales too long to test. Quantitative methods work poorly here. So does intuition alone.</p>
+    <p>The Jade Study treats every outcome as the product of three layers: the starting position a family is given, the <em>vehicle</em> through which it acts — a person, a company, a cross-border structure — and the <em>rules</em> it borrows to amplify that action: law, tax, education systems, residence. These compound rather than add. The first layer cannot be changed. The other two are where the work is.</p>
+    <p>The tradition this draws on is older than the field it resembles. For centuries the Chinese state maintained a bureau charged with timing its own irreversible decisions. What it lacked was structure. What Western practice supplies is structure without any account of the starting position. Neither half is sufficient.</p>
+    <ul class="fields-en">
+      <li>Education · Geography · Marriage</li>
+      <li>Career · Wealth · Succession</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p class="sub-note">每月一篇。</p>
+  <!-- 订阅：把下面 action 换成你的 Buttondown / Formspree 地址后即可收信 -->
+  <form action="REPLACE_WITH_FORM_ENDPOINT" method="post" target="_blank">
+    <label for="email" class="sr-only" style="position:absolute;left:-9999px">Email</label>
+    <input id="email" type="email" name="email" placeholder="your@email.com" required>
+    <button type="submit">订&nbsp;阅</button>
+  </form>
+  <p class="colophon">玉书房 · The Jade Study</p>
+</footer>
+
+</body>
+</html>
