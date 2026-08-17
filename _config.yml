@@ -1,0 +1,12 @@
+title: 玉书房 | Yushufang
+description: "A study for the decisions that shape a family for decades."
+url: "https://yushufang.org"
+theme: minima
+header_pages:
+  - essays.md
+  - advisors.md
+  - about.md
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
