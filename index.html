@@ -52,20 +52,12 @@ description: A framework for high-stakes family decisions before they become har
 
   /* ---- 竖排书脊（signature） ---- */
   .spine{
-    position:fixed;top:0;left:0;height:100vh;width:5.5rem;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:1.6rem;pointer-events:none;z-index:5;
-  }
-  .spine__name{
-    writing-mode:vertical-rl;font-family:var(--cjk);
-    font-size:1.05rem;letter-spacing:.5em;color:var(--ink-soft);
-  }
-  .seal{
-    width:2rem;height:2rem;border:1.5px solid var(--cinnabar);
+    position:fixed;top:0;left:0;height:100vh;width:6.5rem;
     display:flex;align-items:center;justify-content:center;
-    color:var(--cinnabar);font-family:var(--cjk);
-    font-size:1.05rem;line-height:1;padding-bottom:.05em;
+    pointer-events:none;z-index:5;
   }
+  .spine img{width:2.9rem;height:auto;opacity:.92}
+  .mark-mobile{display:none}
 
   /* ---- 版心 ---- */
   main{max-width:var(--measure);margin:0 auto;padding:0 1.5rem}
@@ -126,17 +118,18 @@ description: A framework for high-stakes family decisions before they become har
 
   /* ---- 六领域 ---- */
   .fields{
-    display:flex;flex-wrap:wrap;gap:.55rem 1.5rem;
-    margin:2.8rem 0 2rem;padding:0;list-style:none;
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:1.9rem 1.2rem;margin:3rem 0 1rem;padding:2.2rem 0 0;
+    list-style:none;border-top:1px solid var(--rule);
   }
   .fields li{
-    font-family:var(--cjk);font-size:1.16rem;
-    letter-spacing:.16em;font-weight:600;
+    font-family:var(--cjk);font-size:1.2rem;
+    letter-spacing:.18em;font-weight:600;
   }
   .fields li span{
-    display:block;font-family:var(--latin);font-size:.72rem;
-    letter-spacing:.13em;text-transform:uppercase;
-    color:var(--ink-faint);font-weight:400;margin-top:.15rem;
+    display:block;font-family:var(--latin);font-size:.7rem;
+    letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:400;margin-top:.3rem;
   }
   .closing{
     font-family:var(--cjk);font-size:1.1rem;color:var(--ink);
@@ -197,23 +190,28 @@ description: A framework for high-stakes family decisions before they become har
 
   /* ---- 窄屏 ---- */
   @media (max-width:900px){
-    .spine{
-      position:static;height:auto;width:auto;flex-direction:row;
-      justify-content:flex-start;gap:1rem;padding:2rem 1.5rem 0;
-      max-width:var(--measure);margin:0 auto;
+    .spine{display:none}
+    .mark-mobile{
+      display:block;max-width:var(--measure);margin:0 auto;
+      padding:2.4rem 1.5rem 0;
     }
-    .spine__name{writing-mode:horizontal-tb;letter-spacing:.35em;font-size:1rem}
-    .hero{min-height:auto;padding:4rem 0 5rem}
+    .mark-mobile img{width:9.5rem;height:auto;opacity:.92}
+    .hero{min-height:auto;padding:3.2rem 0 5rem}
     section{padding:5rem 0}
     body{font-size:16px;line-height:1.85}
+    .fields{gap:1.6rem 1rem}
+    .fields li{font-size:1.1rem}
   }
 </style>
 </head>
 <body>
 
 <div class="spine" aria-hidden="true">
-  <div class="spine__name">玉書房</div>
-  <div class="seal">玉</div>
+  <img src="/logo-vertical.png" alt="">
+</div>
+
+<div class="mark-mobile">
+  <img src="/logo-horizontal.png" alt="玉书房">
 </div>
 
 <main>
