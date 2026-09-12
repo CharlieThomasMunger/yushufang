@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'zh-Hans' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} | 玉书房</title>
+{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+{% include hreflang.html %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:site_name" content="玉书房">
+<meta property="og:title" content="{{ page.title }}">
+{% if page.description %}<meta property="og:description" content="{{ page.description }}">{% endif %}
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_CN">
+<link rel="alternate" type="application/rss+xml" title="玉书房" href="{{ '/feed.xml' | absolute_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  {% if page.description %}"description": {{ page.description | jsonify }},{% endif %}
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  {% if page.last_updated %}"dateModified": "{{ page.last_updated | date_to_xmlschema }}",{% endif %}
+  "inLanguage": "zh-Hans",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page.url | absolute_url }}" },
+  "author": {
+    "@type": "Person",
+    "name": "James Liu",
+    "url": "https://yushufang.org/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "玉书房",
+    "url": "https://yushufang.org/"
+  }
+}
+</script>
+<style>
+  :root{
+    --paper:#F7F4EE;
+    --ink:#191713;
+    --ink-soft:#4A463E;
+    --ink-faint:#8B8579;
+    --cinnabar:#9E2B25;
+    --rule:rgba(25,23,19,.16);
+    --cjk:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC","Noto Serif SC","SimSun",serif;
+    --latin:"Source Serif 4",Georgia,"Times New Roman",serif;
+    --measure:36rem;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--latin),var(--cjk);
+    font-size:17px;line-height:1.9;letter-spacing:.01em;
+    text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;
+  }
+  .spine{
+    position:fixed;top:0;left:0;height:100vh;width:6.5rem;
+    display:flex;align-items:center;justify-content:center;
+    pointer-events:none;z-index:5;
+  }
+  .spine img{width:2.9rem;height:auto;opacity:.92}
+  .mark-mobile{display:none}
+  .sitenav{
+    max-width:var(--measure);margin:0 auto;
+    padding:2.2rem 1.5rem 0;display:flex;gap:2.1rem;align-items:baseline;
+  }
+  .sitenav a{
+    font-family:var(--cjk);font-size:.94rem;letter-spacing:.2em;
+    color:var(--ink-faint);text-decoration:none;
+    padding-bottom:.25rem;border-bottom:1px solid transparent;
+    transition:color .25s,border-color .25s;
+  }
+  .sitenav a:hover{color:var(--ink);border-bottom-color:var(--cinnabar)}
+  .sitenav a[aria-current="page"]{color:var(--ink)}
+  .sitenav .langs{margin-left:auto;display:flex;gap:.9rem}
+  .sitenav .langs a{
+    font-family:var(--latin);font-size:.78rem;letter-spacing:.1em;
+    color:var(--ink-faint);border-bottom:none;
+  }
+  .sitenav .langs a.on{color:var(--ink)}
+  .sitenav .langs a:hover{color:var(--cinnabar)}
+  main{max-width:var(--measure);margin:0 auto;padding:4.5rem 1.5rem 5rem}
+  h1{
+    font-family:var(--cjk);font-weight:600;
+    font-size:clamp(1.45rem,3.8vw,1.95rem);
+    line-height:1.65;letter-spacing:.02em;margin:0 0 1.4rem;
+  }
+  h2{
+    font-family:var(--cjk);font-weight:600;font-size:1.2rem;
+    line-height:1.7;margin:3.4rem 0 1.3rem;letter-spacing:.02em;
+  }
+  h3{font-family:var(--cjk);font-weight:600;font-size:1.04rem;margin:2.4rem 0 1rem}
+  p,li{font-family:var(--cjk)}
+  p{margin:0 0 1.45rem;color:var(--ink-soft)}
+  blockquote{
+    margin:2rem 0;padding:0 0 0 1.4rem;
+    border-left:2px solid var(--cinnabar);color:var(--ink);
+  }
+  strong{font-weight:600;color:var(--ink)}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--cinnabar)}
+  hr{border:none;border-top:1px solid var(--rule);margin:3.2rem 0}
+  .byline{
+    font-family:var(--latin);font-size:.84rem;color:var(--ink-faint);
+    letter-spacing:.06em;margin:0 0 3.4rem;padding-bottom:1.6rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .byline span{margin-right:1.2rem;white-space:nowrap}
+  .taxonomy{
+    margin:4rem 0 0;padding-top:1.8rem;border-top:1px solid var(--rule);
+    font-family:var(--cjk);font-size:.9rem;color:var(--ink-faint);
+  }
+  .taxonomy b{
+    display:inline-block;min-width:5.4em;font-weight:600;
+    color:var(--ink-soft);letter-spacing:.14em;
+  }
+  footer{
+    border-top:1px solid var(--rule);max-width:var(--measure);
+    margin:0 auto;padding:3rem 1.5rem 5rem;
+  }
+  .colophon{
+    font-family:var(--latin);font-size:.8rem;
+    color:var(--ink-faint);letter-spacing:.06em;margin:0;
+  }
+  :focus-visible{outline:2px solid var(--cinnabar);outline-offset:3px}
+  @media (max-width:900px){
+    .spine{display:none}
+    .mark-mobile{display:block;max-width:var(--measure);margin:0 auto;padding:2.4rem 1.5rem 0}
+    .mark-mobile img{width:9.5rem;height:auto;opacity:.92}
+    .sitenav{padding-top:1.6rem;gap:1.6rem}
+    .sitenav a{font-size:.88rem;letter-spacing:.14em}
+    main{padding-top:3rem}
+    body{font-size:16px;line-height:1.85}
+  }
+</style>
+</head>
+<body>
+
+<div class="spine" aria-hidden="true">
+  <img src="/logo-vertical.png" alt="">
+</div>
+
+<div class="mark-mobile">
+  <a href="/"><img src="/logo-horizontal.png" alt="玉书房"></a>
+</div>
+
+{% include nav.html %}
+
+<main>
+  <article>
+    <h1>{{ page.title }}</h1>
+    <p class="byline">
+      <span>James Liu</span>
+      <span>首次发布 {{ page.date | date: "%Y-%m-%d" }}</span>
+      {% if page.last_updated %}<span>最后修订 {{ page.last_updated | date: "%Y-%m-%d" }}</span>{% endif %}
+      {% if page.version %}<span>Version {{ page.version }}</span>{% endif %}
+    </p>
+
+    {{ content }}
+
+    {% if page.domains or page.concepts %}
+    <div class="taxonomy">
+      {% if page.domains %}<p><b>决策领域</b>{{ page.domains | join: " · " }}</p>{% endif %}
+      {% if page.concepts %}<p><b>核心概念</b>{{ page.concepts | join: " · " }}</p>{% endif %}
+    </div>
+    {% endif %}
+  </article>
+</main>
+
+<footer>
+  <p class="colophon">玉书房 · The Jade Study</p>
+</footer>
+
+</body>
+</html>

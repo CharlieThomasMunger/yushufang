@@ -1,6 +1,6 @@
 ---
 layout: null
-title: 玉书房 | The Jade Study
+title: 玉书房
 description: A framework for high-stakes family decisions before they become hard to reverse.
 ---
 <!DOCTYPE html>
@@ -8,11 +8,15 @@ description: A framework for high-stakes family decisions before they become har
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>玉书房 | The Jade Study</title>
+<title>玉书房</title>
 <meta name="description" content="A framework for high-stakes family decisions before they become hard to reverse. 玉书房研究家庭在教育、地域、婚姻、事业、财富与传承上的重大决策。">
+<link rel="alternate" hreflang="zh-Hans" href="https://yushufang.org/">
+<link rel="alternate" hreflang="en" href="https://yushufang.org/en/">
+<link rel="alternate" hreflang="fr" href="https://yushufang.org/fr/">
+<link rel="alternate" hreflang="x-default" href="https://yushufang.org/">
 <link rel="canonical" href="https://yushufang.org/">
-<meta property="og:site_name" content="玉书房 | The Jade Study">
-<meta property="og:title" content="玉书房 | The Jade Study">
+<meta property="og:site_name" content="玉书房">
+<meta property="og:title" content="玉书房">
 <meta property="og:description" content="A framework for high-stakes family decisions before they become hard to reverse.">
 <meta property="og:url" content="https://yushufang.org/">
 <meta property="og:type" content="website">
@@ -58,6 +62,32 @@ description: A framework for high-stakes family decisions before they become har
   }
   .spine img{width:2.9rem;height:auto;opacity:.92}
   .mark-mobile{display:none}
+
+  /* ---- 站内导航 ---- */
+  .sitenav{
+    max-width:var(--measure);margin:0 auto;
+    padding:2.2rem 1.5rem 0;
+    display:flex;gap:2.1rem;align-items:baseline;
+  }
+  .sitenav a{
+    font-family:var(--cjk);font-size:.94rem;letter-spacing:.2em;
+    color:var(--ink-faint);text-decoration:none;
+    padding-bottom:.25rem;border-bottom:1px solid transparent;
+    transition:color .25s,border-color .25s;
+  }
+  .sitenav a:hover{color:var(--ink);border-bottom-color:var(--cinnabar)}
+  .sitenav a[aria-current="page"]{color:var(--ink)}
+  .sitenav .langs{margin-left:auto;display:flex;gap:.9rem}
+  .sitenav .langs a{
+    font-family:var(--latin);font-size:.78rem;letter-spacing:.1em;
+    color:var(--ink-faint);border-bottom:none;
+  }
+  .sitenav .langs a.on{color:var(--ink)}
+  .sitenav .langs a:hover{color:var(--cinnabar)}
+  @media (max-width:900px){
+    .sitenav{padding-top:1.6rem;gap:1.6rem}
+    .sitenav a{font-size:.88rem;letter-spacing:.14em}
+  }
 
   /* ---- 版心 ---- */
   main{max-width:var(--measure);margin:0 auto;padding:0 1.5rem}
@@ -203,6 +233,37 @@ description: A framework for high-stakes family decisions before they become har
     .fields li{font-size:1.1rem}
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://yushufang.org/#website",
+      "url": "https://yushufang.org/",
+      "name": "玉书房",
+      "alternateName": ["The Jade Study", "Yushufang"],
+      "inLanguage": "zh-Hans",
+      "description": "A framework for high-stakes family decisions before they become hard to reverse.",
+      "publisher": { "@id": "https://yushufang.org/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://yushufang.org/#person",
+      "name": "James Liu",
+      "alternateName": ["刘一卜", "Liu Yibu"],
+      "url": "https://yushufang.org/about/",
+      "jobTitle": "Founder, 玉书房",
+      "knowsAbout": [
+        "family decision-making",
+        "cross-border education",
+        "wealth structuring",
+        "succession planning"
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -213,6 +274,17 @@ description: A framework for high-stakes family decisions before they become har
 <div class="mark-mobile">
   <img src="/logo-horizontal.png" alt="玉书房">
 </div>
+
+<nav class="sitenav">
+  <a href="/" aria-current="page">首页</a>
+  <a href="/essays/">文章</a>
+  <a href="/about/">关于</a>
+  <span class="langs">
+    <a href="/" class="on">中</a>
+    <a href="/en/">EN</a>
+    <a href="/fr/">FR</a>
+  </span>
+</nav>
 
 <main>
 
@@ -294,11 +366,20 @@ description: A framework for high-stakes family decisions before they become har
 </main>
 
 <footer>
-  <p class="sub-note">每月一篇。</p>
-  <!-- 订阅：把下面 action 换成你的 Buttondown / Formspree 地址后即可收信 -->
-  <form action="REPLACE_WITH_FORM_ENDPOINT" method="post" target="_blank">
-    <label for="email" class="sr-only" style="position:absolute;left:-9999px">Email</label>
-    <input id="email" type="email" name="email" placeholder="your@email.com" required>
+  <p class="sub-note">订阅玉书房的新文章与重要更新。</p>
+  <!-- ============================================================
+       订阅表单（Kit / ConvertKit）
+       启用方法：把下面两处 KIT_FORM_ID 换成你在 Kit 后台
+       新建 Form 后拿到的那串数字（例如 8123456）。
+       换完之后表单即生效，不需要其他配置。
+       ============================================================ -->
+  <form action="https://app.kit.com/forms/KIT_FORM_ID/subscriptions"
+        method="post"
+        data-sv-form="KIT_FORM_ID"
+        data-uid=""
+        target="_blank">
+    <label for="email" style="position:absolute;left:-9999px">Email</label>
+    <input id="email" type="email" name="email_address" placeholder="your@email.com" required>
     <button type="submit">订&nbsp;阅</button>
   </form>
   <p class="colophon">玉书房 · The Jade Study</p>

@@ -1,10 +1,33 @@
-# 玉书房 | Yushufang
-> Research by Liu Yibu (James Liu) on how a person or a family with
-> more than one possible future makes choices of lasting value — in
-> education, geography, career, wealth, and the next generation.
+# 玉书房
+> Romanized: Yushufang. English rendering: The Jade Study.
+> The name of the work is 玉书房; the English forms refer to the same entity.
+>
+> Independent research by James Liu (刘一卜 / Liu Yibu) on how a person or
+> a family with more than one possible future makes choices of lasting
+> value — in education, geography, marriage, career, wealth, and succession.
+>
+> The Jade Study treats every outcome as the product of three layers:
+> the starting position a family is given, the vehicle through which it
+> acts, and the rules it borrows to amplify that action. The first layer
+> cannot be changed; the other two are where the work is.
+
+## Languages
+The primary and most complete version of this work is in Chinese.
+English and French are selected subsets, not full translations.
+- 中文 (primary): https://yushufang.org/
+- English (selected): https://yushufang.org/en/
+- Français (summary): https://yushufang.org/fr/
 
 ## Key pages
-- Home: https://yushufang.org/
-- Essays: https://yushufang.org/essays/
-- For Advisors: https://yushufang.org/advisors/
-- About: https://yushufang.org/about/
+- Home (zh): https://yushufang.org/
+- Essays (zh): https://yushufang.org/essays/
+- About (zh): https://yushufang.org/about/
+- About (en): https://yushufang.org/en/about/
+
+## Six domains of major decisions
+Education, Geography, Marriage, Career, Wealth, Succession.
+What they have in common: once made, they are hard to reverse.
+
+## Author
+James Liu (刘一卜 / Liu Yibu). Based in Luxembourg.
+Canonical author page: https://yushufang.org/about/

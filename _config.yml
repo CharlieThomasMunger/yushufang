@@ -1,12 +1,44 @@
-title: 玉书房 | Yushufang
-description: "A study for the decisions that shape a family for decades."
+title: 玉书房
+description: "A framework for high-stakes family decisions before they become hard to reverse."
 url: "https://yushufang.org"
+lang: zh-Hans
+
+author:
+  name: James Liu
+
 theme: minima
-header_pages:
-  - essays.md
-  - advisors.md
-  - about.md
+
+# 主导航由 _includes/nav.html 按语言生成，不用 header_pages
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+
+# ---- 三语结构 ----
+# 中文 = 主站（/），全量内容，文章放 _posts/
+# 英文 = /en/，精选，文章放 _en/
+# 法文 = /fr/，最小门面，暂不设文章流（_fr/ 预留）
+collections:
+  en:
+    output: true
+    permalink: /en/essays/:path/
+  fr:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      lang: "zh"
+  - scope:
+      path: ""
+      type: "en"
+    values:
+      layout: "post"
+      lang: "en"
+
+exclude:
+  - README.md
+  - INSTALL.md
