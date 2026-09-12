@@ -22,12 +22,8 @@ Education · Geography · Marriage · Career · Wealth · Succession
 
 What they have in common: once made, they are hard to reverse.
 
-## For advisors
-
-Your clients' hardest questions are rarely about products. They are about countries, schools, successors, and time. See [For Advisors](/advisors/).
-
 ## About
 
-The Jade Study is an independent body of research by James Liu (刘一卜), based in Luxembourg. It is not an advisory firm. [More](/en/about/).
+The Jade Study is an independent body of research by James Liu (刘一卜), based in Luxembourg. [More](/en/about/).
 
 The main body of work is published in Chinese. [中文站](/)

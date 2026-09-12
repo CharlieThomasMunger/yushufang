@@ -14,21 +14,21 @@ description: 玉书房是一项关于家庭重大、不可逆决策的独立研�
 
 ## 关于作者
 
-刘一卜（Liu Yibu），亦以 James Liu 为职业名。常驻卢森堡。
+刘一卜（Liu Yibu），亦以 James Liu 为职业名。常驻卢森堡，常年往返瑞士。
 
-二十余年创业经历，经手过两次企业并购与早期投资。目前经营一家跨境教育公司，卢森堡企业家协会会员，卢森堡大学 ABBL 财富管理硕士在读。此前受艺术与设计训练，并在欧洲传媒领域取得硕士学位。
+二十年周易研究，实操案例逾千。
 
-两个孩子在欧洲读国际学校。这套研究的大部分问题，最初都是自己家里要回答的问题。
+卢森堡大学财富管理硕士在读，英国传媒硕士。二十余年创业经历，经手过两次企业并购与早期投资，目前经营一家跨境教育公司，卢森堡企业家协会会员。
+
+两个孩子在欧洲读国际学校。
 
 ## 方法与边界
 
 玉书房研究重大决策，不承诺预测未来。
 
-它同时使用三类材料：中国传统关于时机与周期的思想、跨境实践中的结构与规则、以及现代决策方法。任何一类单独使用都不完整。
+所用的知识来自几个方向：周易、多元思维模型、决策学、统计学、地理、能量共振。任何一类单独使用都不完整。
 
 文中会区分三样东西：已经确证的事实、作者本人的判断、以及尚待验证的假设。判断会随着实践、案例和新信息修订，修订会标注版本与日期。
-
-玉书房是一项研究，不是一家顾问公司。
 
 ## 写作与未来的书
 
@@ -50,13 +50,15 @@ description: 玉书房是一项关于家庭重大、不可逆决策的独立研�
   "jobTitle": "Founder, 玉书房",
   "homeLocation": { "@type": "Place", "name": "Luxembourg" },
   "knowsAbout": [
-    "family decision-making",
+    "major family decisions",
+    "Yijing studies",
+    "mental models",
+    "decision theory",
+    "statistics",
+    "geography",
     "cross-border education",
     "wealth structuring",
-    "succession planning",
-    "relocation and residence planning"
+    "succession planning"
   ]
 }
 </script>
-
-<p style="margin-top:4rem;font-size:.82rem;color:#8B8579">&copy; Silver Bay Mountain Group S.à r.l.</p>

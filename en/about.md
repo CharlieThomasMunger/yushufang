@@ -15,21 +15,21 @@ Education, geography, marriage, career, wealth, succession. What they have in co
 
 ## The author
 
-James Liu (刘一卜 / Liu Yibu), based in Luxembourg.
+James Liu (刘一卜 / Liu Yibu), based in Luxembourg, working regularly in Switzerland.
 
-Over twenty years as an entrepreneur, including two company acquisitions and early-stage investing. Currently runs a cross-border education company. Member of the Luxembourg Entrepreneurs Association. Reading for a Master's in Wealth Management (ABBL programme, University of Luxembourg). Trained earlier in art and design, with a Master's in European media.
+Twenty years of Yijing research, across more than a thousand working cases.
 
-Two children in international schools in Europe. Most of the questions in this work began as questions his own family had to answer.
+Reading for a Master's in Wealth Management at the University of Luxembourg; Master's in media, United Kingdom. Over twenty years as an entrepreneur, including two company acquisitions and early-stage investing. Currently runs a cross-border education company. Member of the Luxembourg Entrepreneurs Association.
+
+Two children in international schools in Europe.
 
 ## Method and limits
 
 The Jade Study researches major decisions. It does not promise to predict the future.
 
-It draws on three bodies of material: Chinese classical thought on timing and cycles, structural and regulatory practice from cross-border work, and modern decision theory. None of the three is sufficient alone.
+The knowledge it draws on comes from several directions: the Yijing, mental models, decision theory, statistics, geography, and energy resonance. No single one of them is sufficient alone.
 
 The writing distinguishes between established fact, the author's own judgment, and assumptions still to be tested. Judgments are revised as practice, cases and new information accumulate; revisions carry a version number and a date.
-
-This is a body of research, not an advisory firm.
 
 ## Contact
 

@@ -24,11 +24,11 @@ Tout résultat procède de trois couches : la position de départ, le **véhicul
 
 ## L'auteur
 
-James Liu (刘一卜 / Liu Yibu), établi au Luxembourg.
+James Liu (刘一卜 / Liu Yibu), établi au Luxembourg, en déplacement régulier en Suisse.
 
-Plus de vingt ans d'entrepreneuriat, dont deux acquisitions d'entreprises. Dirige actuellement une société d'éducation transfrontalière. Membre de la Luxembourg Entrepreneurs Association. Master en gestion de patrimoine en cours (programme ABBL, Université du Luxembourg).
+Vingt ans de recherche sur le Yijing, sur plus d'un millier de cas pratiques.
 
-玉书房 est un travail de recherche, non un cabinet de conseil.
+Master en gestion de patrimoine en cours à l'Université du Luxembourg ; master en médias obtenu au Royaume-Uni. Plus de vingt ans d'entrepreneuriat, dont deux acquisitions d'entreprises et des investissements en amorçage. Dirige actuellement une société d'éducation transfrontalière. Membre de la Luxembourg Entrepreneurs Association.
 
 ## Contact
 
