@@ -25,3 +25,6 @@ html{scroll-padding-top:24px;-webkit-text-size-adjust:100%}body{--sans:var(--cle
 
 .apple .brand{display:inline-flex;align-items:center;line-height:1;flex-shrink:0}.apple .brand img{display:block;width:174px;height:auto;max-width:100%}.apple .site-footer .brand img{width:135px}.apple-cover .cover-brand{width:87px;height:auto;display:block}.apple-cover strong{margin-top:44px}
 @media(max-width:760px){.apple .brand img{width:150px}.apple .site-footer .brand img{width:124px}.apple .site-header{padding-top:21px;min-height:132px}}
+
+.apple-book-copy h2>span{font-size:.88em}
+@media(max-width:760px){.apple-book-copy h2>span{font-size:clamp(21px,calc(10vw - 11.2px),30px);line-height:1.5}}
