@@ -1,21 +1,2 @@
-{% assign L = page.lang | default: 'zh' %}
-{% if L == 'en' %}
-  {% assign home = '/en/' %}{% assign essays = '/en/essays/' %}{% assign about = '/en/about/' %}
-  {% assign t_home = 'Home' %}{% assign t_essays = 'Essays' %}{% assign t_about = 'About' %}
-{% elsif L == 'fr' %}
-  {% assign home = '/fr/' %}{% assign essays = '' %}{% assign about = '' %}
-  {% assign t_home = 'Accueil' %}
-{% else %}
-  {% assign home = '/' %}{% assign essays = '/essays/' %}{% assign about = '/about/' %}
-  {% assign t_home = '首页' %}{% assign t_essays = '文章' %}{% assign t_about = '关于' %}
-{% endif %}
-<nav class="sitenav">
-  <a href="{{ home }}"{% if page.url == home %} aria-current="page"{% endif %}>{{ t_home }}</a>
-  {% if essays != '' %}<a href="{{ essays }}"{% if page.url contains 'essays' %} aria-current="page"{% endif %}>{{ t_essays }}</a>{% endif %}
-  {% if about != '' %}<a href="{{ about }}"{% if page.url contains 'about' %} aria-current="page"{% endif %}>{{ t_about }}</a>{% endif %}
-  <span class="langs">
-    <a href="/"{% if L == 'zh' %} class="on"{% endif %}>中</a>
-    <a href="/en/"{% if L == 'en' %} class="on"{% endif %}>EN</a>
-    <a href="/fr/"{% if L == 'fr' %} class="on"{% endif %}>FR</a>
-  </span>
-</nav>
+{% assign nav = site.data.navigation[page.lang] %}
+<header class="site-header"><a class="brand" href="{{ nav.home | relative_url }}" aria-label="玉书房 / Yushufang"><img src="{{ '/logo-horizontal.png' | relative_url }}" width="1798" height="621" alt="玉书房 / Yushufang"></a><nav class="main-nav" aria-label="Navigation">{% for item in nav.items %}<a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}</nav><nav class="site-languages" aria-label="Language"><a lang="zh-Hans" href="{{ page.translations['zh-Hans'] | default: '/' | relative_url }}"{% if page.lang == 'zh-Hans' %} aria-current="page"{% endif %}>中文</a><a lang="en" href="{{ page.translations.en | default: '/en/' | relative_url }}"{% if page.lang == 'en' %} aria-current="page"{% endif %}>EN</a><a lang="fr" href="{{ page.translations.fr | default: '/fr/' | relative_url }}"{% if page.lang == 'fr' %} aria-current="page"{% endif %}>FR</a></nav></header>

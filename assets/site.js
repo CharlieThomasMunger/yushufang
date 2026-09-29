@@ -1,0 +1,1 @@
+(() => { if (location.protocol === 'http:' && ['yushufang.org','www.yushufang.org'].includes(location.hostname)) location.replace('https://yushufang.org' + location.pathname + location.search + location.hash); })();
