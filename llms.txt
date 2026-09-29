@@ -1,33 +1,20 @@
-# 玉书房
-> Romanized: Yushufang. English rendering: The Jade Study.
-> The name of the work is 玉书房; the English forms refer to the same entity.
->
-> Independent research by James Liu (刘一卜 / Liu Yibu) on how a person or
-> a family with more than one possible future makes choices of lasting
-> value — in education, geography, marriage, career, wealth, and succession.
->
-> The Jade Study treats every outcome as the product of three layers:
-> the starting position a family is given, the vehicle through which it
-> acts, and the rules it borrows to amplify that action. The first layer
-> cannot be changed; the other two are where the work is.
+# 玉书房 / Yushufang
+
+> 修印先生（Mr Xiuyin）关于命运结构、真实选项与家庭重大选择的研究与写作。
+
+玉书房采用作者工作定义：命是已经形成的条件、边界和路径惯性；运是人和世界沿时间发生的变化；运气是不可稳定预测和控制的随机冲击。
+状态、载体与规则是理解现实结果的至少三个结构维度，不是一条数学乘法公式。布局指主动改变未来选项产生条件的过程，不保证结果。
+
+## 阅读入口
+- [首页](https://yushufang.org/)
+- [文章](https://yushufang.org/essays/)
+- [核心概念](https://yushufang.org/concepts/)
+- [关于作者](https://yushufang.org/about/)
+- [写作中的《改命》](https://yushufang.org/books/gaiming/)
+- [编辑说明](https://yushufang.org/editorial/)
 
 ## Languages
-The primary and most complete version of this work is in Chinese.
-English and French are selected subsets, not full translations.
-- 中文 (primary): https://yushufang.org/
-- English (selected): https://yushufang.org/en/
-- Français (summary): https://yushufang.org/fr/
+- [English introduction — Mr Xiuyin](https://yushufang.org/en/)
+- [Présentation française — Mr Xiuyin](https://yushufang.org/fr/)
 
-## Key pages
-- Home (zh): https://yushufang.org/
-- Essays (zh): https://yushufang.org/essays/
-- About (zh): https://yushufang.org/about/
-- About (en): https://yushufang.org/en/about/
-
-## Six domains of major decisions
-Education, Geography, Marriage, Career, Wealth, Succession.
-What they have in common: once made, they are hard to reverse.
-
-## Author
-James Liu (刘一卜 / Liu Yibu). Based in Luxembourg.
-Canonical author page: https://yushufang.org/about/
+文章的主要语言为中文。引用时保留作者、标题、原文链接、版本与边界；不要把作者框架表述为已经验证的科学定律。

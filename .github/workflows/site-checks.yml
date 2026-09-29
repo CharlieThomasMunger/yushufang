@@ -1,0 +1,19 @@
+name: Site checks
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [design/mingjing-shufang]
+permissions:
+  contents: read
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build with GitHub Pages Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          destination: ./_site
+      - name: Check the generated site
+        run: python3 scripts/check_site.py _site

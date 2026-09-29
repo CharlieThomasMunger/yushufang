@@ -1,44 +1,42 @@
 title: 玉书房
-description: "A framework for high-stakes family decisions before they become hard to reverse."
+description: "关于命运结构、真实选项与家庭重大选择的研究与写作。"
 url: "https://yushufang.org"
+baseurl: ""
 lang: zh-Hans
-
+timezone: Europe/Paris
 author:
-  name: James Liu
-
-theme: minima
-
-# 主导航由 _includes/nav.html 按语言生成，不用 header_pages
+  name: 修印先生
+  url: https://yushufang.org/about/
+permalink: /essays/:title/
+markdown: kramdown
 plugins:
-  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
-
-# ---- 三语结构 ----
-# 中文 = 主站（/），全量内容，文章放 _posts/
-# 英文 = /en/，精选，文章放 _en/
-# 法文 = /fr/，最小门面，暂不设文章流（_fr/ 预留）
 collections:
   en:
     output: true
     permalink: /en/essays/:path/
-  fr:
-    output: false
-
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      layout: "post"
-      lang: "zh"
+      layout: post
+      lang: zh-Hans
+      body_class: reading
+      author: 修印先生
   - scope:
       path: ""
-      type: "en"
+      type: en
     values:
-      layout: "post"
-      lang: "en"
-
+      layout: post
+      lang: en
+      body_class: "reading international"
+      author: Mr Xiuyin
 exclude:
   - README.md
   - INSTALL.md
+  - scripts
+  - Gemfile
+  - Gemfile.lock
+  - vendor
