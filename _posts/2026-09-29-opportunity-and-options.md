@@ -4,10 +4,10 @@ title: "为什么有机会，却还不是你的选项？"
 description: "公共机会的出现，不等于已经成为你的选项。看得见、进得去、承担得起，缺一项都还不完整。"
 permalink: "/essays/opportunity-and-options/"
 lang: "zh-Hans"
-author: "修印先生"
+author: "刘一卜"
 body_class: "reading"
 date: "2026-09-29 12:00:00 +0200"
-last_updated: "2026-09-29 12:00:00 +0200"
+last_updated: "2026-09-30 12:00:00 +0200"
 version: "1.0"
 category_label: "问题文章"
 ---
@@ -29,7 +29,7 @@ category_label: "问题文章"
 
 ## 依据与边界
 
-本文依据修印先生的玉书房命运观，解释一组作者工作定义。它不是对所有人生结果的实证定律；具体判断仍须回到事实、代价与当事人的处境。
+本文依据刘一卜的玉书房命运观，解释一组作者工作定义。它不是对所有人生结果的实证定律；具体判断仍须回到事实、代价与当事人的处境。
 
 [查看核心概念](/concepts/#options) · [阅读编辑说明](/editorial/)
 

@@ -4,10 +4,10 @@ title: "命运的结构：状态、载体、规则"
 description: "你有什么、在哪里兑现、怎样被奖励或限制。理解结果之前，先理解结果经过了什么。"
 permalink: "/essays/the-structure-of-fate/"
 lang: "zh-Hans"
-author: "修印先生"
+author: "刘一卜"
 body_class: "reading"
 date: "2026-09-29 12:00:00 +0200"
-last_updated: "2026-09-29 12:00:00 +0200"
+last_updated: "2026-09-30 12:00:00 +0200"
 version: "1.0"
 category_label: "核心概念"
 ---
@@ -29,7 +29,7 @@ category_label: "核心概念"
 
 ## 依据与边界
 
-本文依据修印先生的玉书房命运观，解释一组作者工作定义。它不是对所有人生结果的实证定律；具体判断仍须回到事实、代价与当事人的处境。
+本文依据刘一卜的玉书房命运观，解释一组作者工作定义。它不是对所有人生结果的实证定律；具体判断仍须回到事实、代价与当事人的处境。
 
 [查看核心概念](/concepts/#structure) · [阅读编辑说明](/editorial/)
 
