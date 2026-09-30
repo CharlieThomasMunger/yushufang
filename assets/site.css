@@ -28,3 +28,8 @@ html{scroll-padding-top:24px;-webkit-text-size-adjust:100%}body{--sans:var(--cle
 
 .apple-book-copy h2>span{font-size:.88em}
 @media(max-width:760px){.apple-book-copy h2>span{font-size:clamp(21px,calc(10vw - 11.2px),30px);line-height:1.5}}
+
+.family-feature{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:48px;background:#f5f5f7;border-radius:24px;padding:44px;margin:0 0 60px}.family-feature h2{font-size:31px;line-height:1.5;letter-spacing:-.025em;margin:14px 0}.family-feature p{font-size:17px;line-height:1.9;color:#646469;margin:0 0 20px}.family-feature-side{border-left:1px solid #dedee2;padding-left:32px;align-self:center}.family-feature-side a{display:block;color:#06c;margin:16px 0;font-size:15px}.contact-note{border-top:1px solid #dedee2;margin:48px 0 34px;padding-top:28px}.contact-note h2{font-size:23px;line-height:1.5;margin:0 0 16px}.contact-note p{font-size:16px;line-height:1.9;color:#646469;margin:0 0 16px}.contact-note .blue-link{font-size:16px}.contact-email{overflow-wrap:anywhere}.prose h2{scroll-margin-top:24px}
+@media(max-width:760px){.apple .main-nav{gap:8px;flex-wrap:wrap}.family-feature{grid-template-columns:1fr;gap:26px;padding:28px 24px;margin-bottom:40px}.family-feature h2{font-size:25px}.family-feature p{font-size:16px}.family-feature-side{border-left:0;border-top:1px solid #dedee2;padding:24px 0 0}.contact-note h2{font-size:22px}}
+
+.featured-article{grid-column:1 / -1}.featured-article p{max-width:740px}
