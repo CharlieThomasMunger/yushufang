@@ -3,7 +3,7 @@ layout: post
 title: "Article title"
 description: "Public summary"
 lang: zh-Hans
-author: 修印先生
+author: 刘一卜
 version: "1.0"
 published: false
 ---

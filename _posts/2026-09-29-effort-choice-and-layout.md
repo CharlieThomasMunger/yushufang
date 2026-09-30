@@ -4,10 +4,10 @@ title: "布局，与努力和选择有什么不同？"
 description: "努力增加当前结构里的投入；布局改变努力被兑现的结构，也改变未来选项产生的条件。"
 permalink: "/essays/effort-choice-and-layout/"
 lang: "zh-Hans"
-author: "修印先生"
+author: "刘一卜"
 body_class: "reading"
 date: "2026-09-29 12:00:00 +0200"
-last_updated: "2026-09-29 12:00:00 +0200"
+last_updated: "2026-09-30 12:00:00 +0200"
 version: "1.0"
 category_label: "方法辨析"
 ---
@@ -29,7 +29,7 @@ category_label: "方法辨析"
 
 ## 依据与边界
 
-本文依据修印先生的玉书房命运观，解释一组作者工作定义。它不是对所有人生结果的实证定律；具体判断仍须回到事实、代价与当事人的处境。
+本文依据刘一卜的玉书房命运观，解释一组作者工作定义。它不是对所有人生结果的实证定律；具体判断仍须回到事实、代价与当事人的处境。
 
 [查看核心概念](/concepts/#layout) · [阅读编辑说明](/editorial/)
 

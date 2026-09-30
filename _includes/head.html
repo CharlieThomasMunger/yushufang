@@ -31,7 +31,7 @@
   "description":{{ page.description | default: site.description | jsonify }},
   "url":{{ page.url | absolute_url | jsonify }},
   "inLanguage":{{ page.lang | jsonify }},
-  "author":{"@type":"Person","@id":"https://yushufang.org/#author","name":{{ page.author | jsonify }},"url":"https://yushufang.org/about/","alternateName":["修印先生","Mr Xiuyin"]},
+  "author":{"@type":"Person","@id":"https://yushufang.org/#author","name":{{ page.author | jsonify }},"url":"https://yushufang.org/about/","alternateName":["刘一卜","Liu Yibu"]},
   "publisher":{"@type":"Organization","@id":"https://yushufang.org/#organization","name":"玉书房","alternateName":"Yushufang","url":"https://yushufang.org/","logo":{"@type":"ImageObject","url":"https://yushufang.org/logo-horizontal.png"}}
   {% if page.version %},"mainEntityOfPage":{{ page.url | absolute_url | jsonify }},"datePublished":{{ page.date | date_to_xmlschema | jsonify }},"dateModified":{{ page.last_updated | default: page.date | date_to_xmlschema | jsonify }},"version":{{ page.version | jsonify }}{% endif %}
 }</script>

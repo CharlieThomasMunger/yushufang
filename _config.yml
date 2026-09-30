@@ -5,7 +5,7 @@ baseurl: ""
 lang: zh-Hans
 timezone: Europe/Paris
 author:
-  name: 修印先生
+  name: 刘一卜
   url: https://yushufang.org/about/
 permalink: /essays/:title/
 markdown: kramdown
@@ -24,7 +24,7 @@ defaults:
       layout: post
       lang: zh-Hans
       body_class: reading
-      author: 修印先生
+      author: 刘一卜
   - scope:
       path: ""
       type: en
@@ -32,7 +32,7 @@ defaults:
       layout: post
       lang: en
       body_class: "reading international"
-      author: Mr Xiuyin
+      author: Liu Yibu
 exclude:
   - README.md
   - INSTALL.md

@@ -52,7 +52,7 @@ for name,page in pages.items():
     if page.canon!=[expected]:failures.append(name+': incorrect canonical '+str(page.canon))
     if page.headings!=1:failures.append(name+': expected one h1')
     if not page.meta.get('description'):failures.append(name+': no description')
-    author='修印先生' if page.lang=='zh-Hans' else 'Mr Xiuyin'
+    author='刘一卜' if page.lang=='zh-Hans' else 'Liu Yibu'
     if page.meta.get('author')!=author:failures.append(name+': incorrect author')
     if re.search(r'James|KIT_FORM_ID|YC001|YB001|YN___|设计预览|公共表达候选|localhost|127\.0\.0\.1|\{%|\{\{',text,re.I):failures.append(name+': preview, internal or unresolved content')
     if not page.jsons:failures.append(name+': missing structured data')
