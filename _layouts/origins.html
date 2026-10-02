@@ -1,0 +1,7 @@
+---
+layout: default
+---
+<main id="main" class="origins-main"><article>
+<header class="origins-header"><span class="eyebrow">{{ page.category_label }}</span><h1>{{ page.title }}</h1><p class="origins-subtitle">{{ page.subtitle }}</p><div class="reading-meta"><span>{{ page.author }} <span lang="en">Liu Yibu</span></span><span>首发 <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time></span><span>正文 v{{ page.version }}</span></div><p class="origins-summary">{{ page.summary }}</p></header>
+<div class="origins-body prose">{{ content }}</div><div class="origins-return"><a class="blue-link" href="/essays/">返回文章目录 <span aria-hidden="true">›</span></a></div>
+</article></main>
