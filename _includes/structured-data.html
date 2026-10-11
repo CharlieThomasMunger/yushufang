@@ -1,0 +1,60 @@
+{% assign page_id = page.url | absolute_url | append: '#page' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://yushufang.org/#website",
+      "name": "玉书房",
+      "alternateName": "Yushufang",
+      "url": "https://yushufang.org/",
+      "description": {{ site.description | jsonify }},
+      "inLanguage": ["zh-Hans", "en", "fr"],
+      "publisher": {"@id": "https://yushufang.org/#organization"},
+      "creator": {"@id": "https://yushufang.org/#author"}
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://yushufang.org/#organization",
+      "name": "玉书房",
+      "alternateName": "Yushufang",
+      "url": "https://yushufang.org/",
+      "description": {{ site.description | jsonify }},
+      "logo": {"@type": "ImageObject", "url": "https://yushufang.org/logo-horizontal.png"},
+      "email": "liuyibu01@gmail.com",
+      "contactPoint": {"@type": "ContactPoint", "url": "https://yushufang.org/contact/", "email": "liuyibu01@gmail.com"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://yushufang.org/#author",
+      "name": {{ page.author | jsonify }},
+      "alternateName": ["刘一卜", "Liu Yibu"],
+      "url": "https://yushufang.org/about/",
+      "mainEntityOfPage": "https://yushufang.org/about/",
+      "email": "liuyibu01@gmail.com"
+    },
+    {
+      "@type": "{% if page.version %}Article{% elsif page.contact_page %}ContactPage{% elsif page.person_page %}AboutPage{% else %}WebPage{% endif %}",
+      "@id": {{ page_id | jsonify }},
+      "name": {{ page.title | jsonify }},
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page.description | default: site.description | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "inLanguage": {{ page.lang | jsonify }},
+      "isPartOf": {"@id": "https://yushufang.org/#website"},
+      "author": {"@type": "Person", "@id": "https://yushufang.org/#author", "name": {{ page.author | jsonify }}, "url": "https://yushufang.org/about/"},
+      "publisher": {"@id": "https://yushufang.org/#organization"}
+      {% if page.person_page %}, "mainEntity": {"@id": "https://yushufang.org/#author"}{% endif %}
+      {% if page.contact_page %}, "about": {"@id": "https://yushufang.org/#organization"}{% endif %}
+      {% if page.version %},
+      "image": {"@type": "ImageObject", "url": "https://yushufang.org/logo-horizontal.png"},
+      "mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+      "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+      "dateModified": {{ page.last_updated | default: page.date | date_to_xmlschema | jsonify }},
+      "version": {{ page.version | jsonify }}
+      {% endif %}
+    }
+  ]
+}
+</script>
