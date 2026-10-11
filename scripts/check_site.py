@@ -3,6 +3,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 import json, re, sys
+from datetime import datetime
 import xml.etree.ElementTree as ET
 
 root=Path(sys.argv[1] if len(sys.argv)>1 else '_site').resolve()
@@ -56,7 +57,22 @@ for name,page in pages.items():
     if page.meta.get('author')!=author:failures.append(name+': incorrect author')
     if re.search(r'James|KIT_FORM_ID|YC001|YB001|YN___|设计预览|公共表达候选|localhost|127\.0\.0\.1|\{%|\{\{',text,re.I):failures.append(name+': preview, internal or unresolved content')
     if not page.jsons:failures.append(name+': missing structured data')
-    for item in page.jsons:
+    entities=[]
+    for block in page.jsons:
+        entities.extend(block.get('@graph', [block]))
+    page_entities=[item for item in entities if item.get('@type') in ['WebPage','AboutPage','ContactPage','Article']]
+    if len(page_entities)!=1:failures.append(name+': expected one page entity')
+    by_id={item.get('@id'):item for item in entities if item.get('@id')}
+    website=by_id.get(base+'/#website',{})
+    organization=by_id.get(base+'/#organization',{})
+    person=by_id.get(base+'/#author',{})
+    if website.get('@type')!='WebSite' or website.get('url')!=base+'/':failures.append(name+': missing website identity')
+    if organization.get('name')!='玉书房' or organization.get('email')!='liuyibu01@gmail.com':failures.append(name+': publisher identity mismatch')
+    if person.get('name')!=author or set(person.get('alternateName',[]))!={'刘一卜','Liu Yibu'}:failures.append(name+': person identity mismatch')
+    for item in page_entities:
+        if not item.get('name') or item.get('url')!=expected:failures.append(name+': page entity identity mismatch')
+        if item.get('isPartOf',{}).get('@id')!=base+'/#website':failures.append(name+': website relationship missing')
+        if item.get('publisher',{}).get('@id')!=base+'/#organization':failures.append(name+': publisher relationship missing')
         if item.get('author',{}).get('name')!=author:failures.append(name+': schema author mismatch')
         if item.get('inLanguage')!=page.lang:failures.append(name+': schema language mismatch')
         if item.get('@type')=='Article' and not all(item.get(k) for k in ['datePublished','dateModified','version']):failures.append(name+': article dates/version missing')
@@ -77,11 +93,22 @@ sitemap=root/'sitemap.xml'
 if not sitemap.is_file():failures.append('Missing sitemap')
 else:
     try:
-        locations=[x.text for x in ET.parse(sitemap).iter() if x.tag.endswith('}loc')]
+        sitemap_root=ET.parse(sitemap).getroot()
+        locations=[x.text for x in sitemap_root.iter() if x.tag.endswith('}loc')]
+        dates={entry.find('{*}loc').text:entry.findtext('{*}lastmod') for entry in sitemap_root}
         for location in locations:
             target=resolve(urlsplit(location).path,'index.html')
             if target not in pages:failures.append('Sitemap contains non-page '+str(location))
             elif 'noindex' in pages[target].meta.get('robots',''):failures.append('Sitemap contains noindex page '+target)
+            else:
+                for block in pages[target].jsons:
+                    for item in block.get('@graph',[block]):
+                        if item.get('@type')=='Article':
+                            try:
+                                modified=datetime.fromisoformat(item['dateModified'].replace('Z','+00:00'))
+                                listed=datetime.fromisoformat((dates.get(location) or '').replace('Z','+00:00'))
+                                if modified!=listed:failures.append(target+': sitemap and article update dates disagree')
+                            except (ValueError,KeyError):failures.append(target+': missing or invalid article sitemap date')
         for name,p in pages.items():
             if 'noindex' not in p.meta.get('robots','') and base+route(name) not in locations:failures.append('Indexable page absent from sitemap '+name)
     except ET.ParseError:failures.append('Malformed sitemap XML')
