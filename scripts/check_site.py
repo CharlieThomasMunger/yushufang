@@ -190,6 +190,7 @@ for bot in ['Baiduspider','360Spider','Sogou web spider','Bytespider','GPTBot']:
 css=(root/'assets/site.css').read_text(encoding='utf-8') if (root/'assets/site.css').is_file() else ''
 for token in ['Songti SC','SimSun','STSong']:
     if token not in css:failures.append('Chinese serif stack missing '+token)
+if css.find("'SimSun'") > css.find("'STSong'"):failures.append('STSong precedes SimSun in the serif stack')
 if 'fonts.googleapis.com' in css or 'fonts.gstatic.com' in css or '@font-face' in css:
     failures.append('CSS loads an external or embedded font')
 
