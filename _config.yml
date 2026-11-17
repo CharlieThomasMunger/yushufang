@@ -1,5 +1,5 @@
 title: 玉书房
-description: "关于命运结构、真实选项与家庭重大选择的研究与写作。"
+description: "玉书房是刘一卜（Liu Yibu）的个人研究与写作站点，讨论命运结构、真实选项与家庭重大选择。"
 url: "https://yushufang.org"
 baseurl: ""
 lang: zh-Hans
@@ -7,6 +7,9 @@ timezone: Europe/Paris
 author:
   name: 刘一卜
   url: https://yushufang.org/about/
+  uri: https://yushufang.org/about/
+feed:
+  posts_limit: 100
 permalink: /essays/:title/
 markdown: kramdown
 plugins:

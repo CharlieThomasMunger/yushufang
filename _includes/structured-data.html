@@ -1,4 +1,6 @@
 {% assign page_id = page.url | absolute_url | append: '#page' %}
+{% assign schema_name = page.seo_title | default: page.title %}
+{% assign schema_description = page.meta_description | default: page.description | default: site.description %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -6,23 +8,36 @@
     {
       "@type": "WebSite",
       "@id": "https://yushufang.org/#website",
-      "name": "玉书房",
-      "alternateName": "Yushufang",
+      "name": "玉书房 · 刘一卜",
+      "alternateName": ["玉书房", "Yushufang", "刘一卜"],
       "url": "https://yushufang.org/",
       "description": {{ site.description | jsonify }},
       "inLanguage": ["zh-Hans", "en", "fr"],
       "publisher": {"@id": "https://yushufang.org/#organization"},
-      "creator": {"@id": "https://yushufang.org/#author"}
+      "creator": {"@id": "https://yushufang.org/#author"},
+      "sameAs": [
+        "https://yushufang.org/about/",
+        "https://yushufang.org/en/",
+        "https://yushufang.org/fr/"
+      ]
     },
     {
       "@type": "Organization",
       "@id": "https://yushufang.org/#organization",
       "name": "玉书房",
-      "alternateName": "Yushufang",
+      "alternateName": ["玉书房 · 刘一卜", "Yushufang"],
       "url": "https://yushufang.org/",
       "description": {{ site.description | jsonify }},
+      "disambiguatingDescription": "刘一卜的个人研究与写作站点，不是同名商铺或公司。",
       "logo": {"@type": "ImageObject", "url": "https://yushufang.org/logo-horizontal.png"},
       "email": "liuyibu01@gmail.com",
+      "founder": {"@id": "https://yushufang.org/#author"},
+      "sameAs": [
+        "https://yushufang.org/about/",
+        "https://yushufang.org/contact/",
+        "https://yushufang.org/en/",
+        "https://yushufang.org/fr/"
+      ],
       "contactPoint": {"@type": "ContactPoint", "url": "https://yushufang.org/contact/", "email": "liuyibu01@gmail.com"}
     },
     {
@@ -30,16 +45,24 @@
       "@id": "https://yushufang.org/#author",
       "name": {{ page.author | jsonify }},
       "alternateName": ["刘一卜", "Liu Yibu"],
+      "description": "刘一卜（Liu Yibu）是玉书房的研究与写作者。",
       "url": "https://yushufang.org/about/",
       "mainEntityOfPage": "https://yushufang.org/about/",
-      "email": "liuyibu01@gmail.com"
+      "email": "liuyibu01@gmail.com",
+      "affiliation": {"@type": "Organization", "@id": "https://yushufang.org/#organization", "name": "玉书房"},
+      "sameAs": [
+        "https://yushufang.org/about/",
+        "https://yushufang.org/en/about/",
+        "https://yushufang.org/fr/about/",
+        "https://yushufang.org/contact/"
+      ]
     },
     {
       "@type": "{% if page.version %}Article{% elsif page.contact_page %}ContactPage{% elsif page.person_page %}AboutPage{% else %}WebPage{% endif %}",
       "@id": {{ page_id | jsonify }},
-      "name": {{ page.title | jsonify }},
-      "headline": {{ page.title | jsonify }},
-      "description": {{ page.description | default: site.description | jsonify }},
+      "name": {{ schema_name | jsonify }},
+      "headline": {{ schema_name | jsonify }},
+      "description": {{ schema_description | jsonify }},
       "url": {{ page.url | absolute_url | jsonify }},
       "inLanguage": {{ page.lang | jsonify }},
       "isPartOf": {"@id": "https://yushufang.org/#website"},
